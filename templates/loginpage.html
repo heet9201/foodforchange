@@ -1,0 +1,101 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/stylem.css' %}">
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" />
+   
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://kit.fontawesome.com/74bfeb452a.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <title>Food For Change</title>
+</head>
+
+<body>
+    {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+           {{message}}
+          </div>
+            {% endfor %}
+    <div class="login_main_div d-none d-md-flex">
+        
+        <div class="w-50 h-100 cont d-flex align-items-center justify-content-center" style="background-color: #75a488;">
+            <form method="POST" class="w-100" action="login">
+            {% csrf_token %}
+
+            <div class="login_h d-flex">
+                <div class="w-100 h-100 cont d-flex align-items-center justify-content-center" style="background-color: #75a488;">
+                    <h1 class="text-center text-white">Welcome</h1>
+                    <div class="w-50 mt-5 pt-5">
+                        <input type="email" name="username" id="email"  class="lw" placeholder="Email" >
+                        
+                    </div>
+                    <div class="w-50 mt-5 mb-5">
+                        <input type="password" name="password" id="pword"  class="lw " placeholder="Password">
+                        
+                    </div>
+
+                    <div class="cont w-50 mb-3 d-flex">
+                        <!-- <h6 class="d-flex justify-content-center px-4 py-1 mt-5 text-white">Forgot Password?</h6> -->
+                        <button type="submit" class="mx-0 text-white btn btn-dark py-2">Login</button>
+                        <h6 class="d-flex justify-content-center px-4 py-3 text-white">Don't have an account ?
+                            <span style="color: black;">&nbsp; <a href="{% url 'signuppage' %}" class="text-decoration-none black"> Sign Up </a> </span></h6>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </form>
+        </div>
+        <div class=" w-50 h-100 img_div d-none d-md-block overflow-hidden" style="background-color:aqua; ">
+            <img src="https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/57000/57470/image/24ed53c2a50ee116f53cc29a1be19135d9e22d2b.jpg" class="h-100 align-items-end " alt="img1 " id="img1">
+        </div>
+    </div>
+
+    <div class="login_main_div d-flex d-md-none">
+        
+        <div class="w-100 h-100 cont d-flex align-items-center justify-content-center" style="background-color: #75a488;">
+            <form method="POST" class="w-100" action="login">
+            {% csrf_token %}
+
+            <div class="login_h d-flex">
+                <div class="w-100 h-100 cont d-flex align-items-center justify-content-center" style="background-color: #75a488;">
+                    <h1 class="text-center text-white">Welcome</h1>
+                    <div class="w-50 mt-5 pt-5">
+                        <input type="email" name="username" id="email"  class="lw" placeholder="Email" >
+                        
+                    </div>
+                    <div class="w-50 mt-5 mb-5">
+                        <input type="password" name="password" id="pword"  class="lw " placeholder="Password">
+                        
+                    </div>
+
+                    <div class="cont w-50 d-flex">
+                        <!-- <h6 class="d-flex justify-content-center px-4 py-1 mt-5 text-white">Forgot Password?</h6> -->
+                        <button type="submit" class="mx-0 text-white btn btn-dark py-2">Login</button>
+                    </div>
+                    <div class="cont w-100 mb-3 d-flex">
+                        <h6 class="d-flex justify-content-center py-3 text-white">Don't have an account ?
+                            <span style="color: black;">&nbsp; <a href="{% url 'signuppage' %}" class="text-decoration-none black"> Sign Up </a> </span></h6>
+                        </div>
+                </div>
+            </div>
+            
+            
+        </form>
+        </div>
+        
+    </div>
+</body>
+
+</html>

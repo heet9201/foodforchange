@@ -1,0 +1,512 @@
+.reg_container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(86, 171, 143);
+    overflow: hidden;
+}
+
+.reg_heading {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.reg_inputs5 {
+    display: block;
+
+    width: 315px;
+    margin-top: 18px;
+    margin-left: 70px;
+    font-weight: 500;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #100f0f;
+    color: white;
+}
+
+
+.reg_inputs6 {
+    display: block;
+    width: 90%;
+    margin-top: 18px;
+    margin-left: 70px;
+    font-weight: 500;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #100f0f;
+}
+
+.su_dd {
+    color: black;
+}
+
+.reg_inputs1 {
+    display: block;
+
+    width: 315px;
+    margin-top: 18px;
+    margin-left: 70px;
+    font-weight: 500;
+    font-size: small;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #100f0f;
+    color: white;
+
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    font-size: small;
+}
+
+.reg_p {
+    font-weight: 500;
+    color: white;
+    margin-left: 70px;
+    margin-top: 18px;
+    font-size: small;
+
+}
+
+.reg_inputs2 {
+    display: block;
+    width: 315px;
+    margin-top: 18px;
+    margin-left: 70px;
+    font-weight: 500;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #100f0f;
+    color: white;
+    outline: none;
+}
+
+.reg_inputs3 {
+    
+}
+
+.reg_cb {
+    font-weight: 500;
+    margin-left: 70px;
+}
+
+.reg_cb1 {
+    font-weight: 500;
+
+}
+
+.reg_signupbtn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 25px;
+    border: none;
+    cursor: pointer;
+
+    opacity: 0.9;
+    float: left;
+    width: 30%;
+
+}
+
+.clearfix{
+    display: flex;
+    justify-content: center;
+}
+
+.reg_signupbtn:hover {
+    opacity: 0.8;
+}
+
+.reg_signup {
+    color: aliceblue;
+
+}
+
+/* -------------------------------login ngo--------------------------------------------*/
+
+.log_main{
+    justify-content: center;
+}
+
+.log_container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(86, 171, 143);
+    overflow: hidden;
+}
+
+.log_heading {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.log_inputs6 {
+    display: block;
+    width: 500px;
+    margin-top: 60px;
+    margin-left: 70px;
+    font-weight: 500;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #100f0f;
+}
+
+.log_signupbtn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 60px 60px 0px 60px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    float: left;
+    width: 30%;
+}
+
+.log_signupbtn:hover {
+    opacity: 0.8;
+}
+
+
+
+.ngo_bkg {
+    background-color: rgba(231, 232, 252, 0.2);
+    width: 30vw;
+    height: 65vh;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+.ngo_name{
+    font-size: 40px;
+}
+.ngo_detail{
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.bkg1 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, #1E1E1E 0%, #75A488 100%);
+    height: 100vh;
+}
+
+.ngo_home_padding{
+    padding-top: 70px;
+}
+
+.prof_prof_btn {
+    background-color: #739381;
+}
+
+.prof_bkg {
+    background-color: rgba(231, 232, 252, 0.2);
+    width: 23%;
+    height: 90vh;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+.prof_img_div {
+    padding-top: 30px;
+    width: 100px;
+    height: 100px;
+    z-index: 0;
+}
+
+.prof_img {
+    opacity: 1;
+    width: 75px;
+    height: 75px;
+    border: 0.4rem;
+    border-style: solid;
+    color: white;
+    border-radius: 50px;
+}
+
+.edit_prof_btn {
+    background-color: #FF8906;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 90%;
+}
+
+.prof_line {
+    opacity: 1;
+    height: 1rem;
+    width: 90%;
+    background-color: white;
+}
+
+.prof_recent_div{
+    height: 35%;
+}
+.prof_recent {
+    background-color: #783EFD;
+    width: 40%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.prof_recent1 {
+    background-color: #50DFB2;
+    width: 40%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+#main {
+    width: 70vw;
+    height: 90vh;
+    margin-right: 2vw;
+}
+
+.prof_d1 {
+    width: 40vw;
+    height: 50vh;
+}
+
+#prof_d1_1 {
+    background-color: rgba(231, 232, 252, 0.2);
+    border-radius: 10px;
+    height: 15vh;
+    width: 19vw;
+    align-items: flex-end;
+}
+
+#my_inventory {
+    margin-bottom: 2vh;
+    background-color: rgba(231, 232, 252, 0.2);
+    border-radius: 10px;
+    height: 65%;
+    align-items: flex-start;
+}
+
+.prof_areas {
+    width: 25vw;
+    height: 100%;
+    background-color: rgba(231, 232, 252, 0.2);
+    border-radius: 10px;
+}
+
+.prof_main1 {
+    height: 55%;
+}
+
+.prof_main2 {
+    height: 40%;
+    margin-top: 4vh;
+}
+
+.prof_m2_1 {
+    background-color: rgba(231, 232, 252, 0.2);
+    width: 55vw;
+    border-radius: 10px;
+}
+
+.prof_m2_2 {
+    width: 10vw;
+    border-radius: 10px;
+}
+
+.prof_m2_21 {
+    width: 10vw;
+    height: 9vw;
+    border-radius: 10px;
+    background-color: rgba(231, 232, 252, 0.2);
+}
+
+.prof_m2_22 {
+    width: 10vw;
+    height: 7vw;
+    border-radius: 10px;
+    background-color: rgba(231, 232, 252, 0.2);
+}
+
+#month_strk {
+    color: #3FC679;
+}
+
+
+/* Volunteer need start*/
+
+.bkg2 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, #1E1E1E 0%, #75A488 100%);
+    height: 100vh;
+}
+
+.vn_pad{
+    align-content: center;
+}
+
+.sub_btn{
+    background-color: #FF8906;
+    color: white;
+    font-size: 17px;
+}
+.sub_btn:hover{
+    background-color:#75A488 ;
+    box-shadow: 2px 2px 5px black;
+}
+
+.sub_btn:active {
+    box-shadow: none;
+}
+
+.vn_p::placeholder{
+    color: black;
+    opacity: 0.7;
+    font-size:medium;
+
+}
+
+
+.cal{
+    width: 300px;
+}
+
+
+/* Media Query Start*/
+
+
+
+@media(max-width: 768px) {
+
+    .reg_inputs6 {
+        width: 315px;
+    }
+
+        .log_inputs6 {
+            
+            width: 75vw;
+            
+        }
+
+
+    .prof_bkg {
+        background-color: rgba(231, 232, 252, 0.2);
+        width: 95vw;
+        height: 75vh;
+        border-radius: 10px;
+        margin-left: 2vw;
+        margin-bottom: 15px;
+    }
+
+        .ngo_bkg {
+            background-color: rgba(231, 232, 252, 0.2);
+            width: 90vw;
+            height: 75vh;
+            border-radius: 10px;
+            overflow-x: hidden;
+        }
+
+
+
+    .bkg1 {
+        height: auto;
+    }
+
+    .bkg2 {
+        height: 100vh;
+    }
+
+    .prof_main1 {
+        height: 55%;
+        margin-top: 35px;
+    }
+
+    #main {
+        width: 100vw;
+        height: 90vh;
+    }
+
+    .prof_areas {
+        width: 35vw;
+        height: 100%;
+        background-color: rgba(231, 232, 252, 0.2);
+        border-radius: 10px;
+    }
+
+    .prof_d1 {
+        width: 55vw;
+        height: 50vh;
+    }
+
+    .prof_m2_2 {
+        width: 25vw;
+        border-radius: 10px;
+    }
+
+    .prof_m2_1 {
+        background-color: rgba(231, 232, 252, 0.2);
+        width: 65vw;
+        height: 266px;
+        border-radius: 10px;
+    }
+
+    .prof_m2_21 {
+        width: 25vw;
+        height: 140px;
+        border-radius: 10px;
+        background-color: rgba(231, 232, 252, 0.2);
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .prof_m2_22 {
+        width: 25vw;
+        height: 110px;
+        border-radius: 10px;
+        background-color: rgba(231, 232, 252, 0.2);
+        align-items: center;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #prof_d1_1 {
+        background-color: rgba(231, 232, 252, 0.2);
+        border-radius: 10px;
+        height: 15vh;
+        width: 25vw;
+        align-items: flex-end;
+    }
+
+    .vol_text {
+        font-size: 12px;
+    }
+
+    #location_icon {
+        margin-top: 12px;
+    }
+
+
+    /* Start of leaderboard */
+
+    .lb_rect {
+        width: 90vw;
+    }
+
+    .lb_table {
+        width: 90%;
+        overflow: scroll;
+    }
+
+    .block_div {
+        width: 100%;
+    }
+
+        .feed_txt {
+            font-size: 17px;
+        }
+
+        .ftr {
+            font-size: 10px;
+        }
+}

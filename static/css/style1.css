@@ -1,0 +1,125 @@
+.carousel-inner p{
+    font-size: 10%;
+}
+/* .carou .slider_text p{
+    font-size: 6% !important;
+} */
+#cnt11 {
+    height: 100vh;
+    width: 100vw;
+}
+
+.right {
+    width: 50vw;
+}
+
+.left {
+    width: 50vw;
+    height: 100vh;
+    background-color: rgb(117, 164, 136);
+}
+
+.heading {
+    width: 100%;
+    color: white;
+    font-family: ubuntu;
+    margin-bottom: 50px;
+    padding-top: 25px;
+}
+
+.register {
+    display: block;
+    margin-bottom: 15px;
+    width: 37%;
+    height: 38px;
+    margin-left: 70px;
+    font-weight: 500;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #100f0f;
+    color: white;
+    outline: none;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    font-size: small;
+}
+
+.dd {
+    color: #100f0f;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 30px;
+    margin-left: 120px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.signupbtn {
+    width: 50%;
+    margin: 0px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#address {
+    width: 80%;
+}
+
+p {
+    color: aliceblue;
+}
+
+a {
+    color: #100f0f;
+}
+
+select {
+    width: 75%;
+}
+
+
+@media(max-width: 768px) {
+
+    #cnt11 {
+            height: auto;
+        }
+    
+        
+    .left{
+        width: 100vw;
+        height: auto;
+        background-color: rgb(117, 164, 136);
+    }
+
+        .register {
+            display: block;
+            margin-bottom: 15px;
+            width: 70%;
+            height: 38px;
+            margin-left: 70px;
+            font-weight: 500;
+            background: none;
+            border: 0;
+            border-bottom: 2px solid #100f0f;
+            color: white;
+            outline: none;
+        }
+
+                #address {
+                    width: 70%;
+                }
+}

@@ -1,0 +1,119 @@
+{% extends 'navbar.html' %} {% load static %}
+<img src="{% static 'img/food.jpg' %}" alt="My image" /> {%block lstatus%}
+
+<hr class="w-100 m-0" style="height: 4px; opacity: 1; background-color: #f38e5a" /> {%endblock lstatus%} {% block leaderactive %}active{% endblock leaderactive %} {%block content %}
+
+<div class="lb_main">
+    <div class="w-100 h-100 justify-content-evenly align-items-center d-flex">
+        <div class="lb_rect justify-content-start align-items-top">
+            <div class="lb_heading">
+                <h1>Leaderboard</h1>
+            </div>
+
+            <div class="lb_table d-flex">
+                <table>
+                    <tr>
+                        <th class="lb_tb_head">S.No</th>
+                        <th class="lb_tb_head">Profile</th>
+                        <th class="lb_tb_head">Name</th>
+                        <th class="lb_tb_head">Sessions</th>
+                        <th class="lb_tb_head">People fed</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Twinkle</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Shreya</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Astha</td>
+                        <td>2</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Omi</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Mrugen</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Kishan</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Heet</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Harry</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Namjoon</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <img class="lb_pics1" src="{% static 'img/profile.jpg' %}" alt="error" />
+                        </td>
+                        <td>Ramesh</td>
+                        <td>4</td>
+                        <td>256</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

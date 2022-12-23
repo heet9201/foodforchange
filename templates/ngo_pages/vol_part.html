@@ -1,0 +1,85 @@
+{% extends 'ngo_pages/ngo_navbar.html' %} {% load static %} 
+{%block nvstatus%}<hr class="w-100 m-0" style="height: 4px; opacity: 1; background-color: #f38e5a" /> {%endblock nvstatus%}
+{%block npartactive%}active{%endblock npartactive%}
+{% block content %}
+<div class="bkg2 vn_pad w-100 pt-5 d-flex align-items-center justify-content-center">
+    <div class="d-flex justify-content-center">
+        <div class="cont1">
+            <div class="text-white mb-5 d-flex justify-content-center">
+                Select volunteers who appeared based on event
+            </div>
+            <form action="ngo_session" method="POST" class="cal">
+                {% csrf_token %}
+                <div class="justify-content-center">
+
+                    <div class="d-flex justify-content-between w-100 mb-3">
+                    
+                        
+                        <select name="eventselect" class="rounded-3 border-0 ps-1 w-100 py-1 mb-3" class="register2" placeholder="select event">
+                                    <option value=" ">Select Event</option>
+                                    {% for post in post %}
+                                    <option value="{{post.event_name}}" class="dd">{{post.event_name}}</option>
+                                    <!-- <option value="Thaltej " class="dd">Event 2</option>
+                                    <option value="Bopal " class="dd">Event 3</option>
+                                    <option value="Satellite " class="dd">Event 4</option> -->
+                                    {% endfor %}
+                                </select>
+                        
+                    </div>
+                    <div class="clearfix w-100 d-flex justify-content-center mt-3">
+                        <button type="submit" class="sub_btn p-1 px-3 border-0 rounded-3 w-50">Get Volunteers</button>
+                    </div><br>
+            </form>
+
+
+                    <div class="d-flex flex-wrap justify-content-start align-items-center mb-5 text-white">
+                        <div class=" w-100">
+                            <table class="table table-bordered table-striped table-success">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Date Registered</th>
+                                </tr>
+                                {% for sess in sess %}
+                                {% for profile in profile %}
+                                {% if sess.Email == profile.Email  %}
+                            <div>
+                                <tr>
+                                    <td>{{profile.First_name}}  {{profile.Last_name}}</td>
+                                    <td>{{profile.Contact_no}} </td>
+                                    <td> {{sess.vdate}}</td>
+                                </tr>
+                                <!-- <label for="v1">{{profile.First_name}}  {{profile.Last_name}} - {{profile.Contact_no}} - {{sess.vdate}} </label> -->
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endfor %}
+                            <!-- <div>
+                                <input type="checkbox" name="Vol 1" class="mx-3" id="v2">
+                                <label for="v1"> VOL 2</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="Vol 1" class="mx-3" id="v3">
+                                <label for="v1"> VOL 3</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="Vol 1" class="mx-3" id="v4">
+                                <label for="v1"> VOL 4</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="Vol 1" class="mx-3" id="v5">
+                                <label for="v1"> VOL 5</label>
+                            </div> -->
+                        </table>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="clearfix w-100 d-flex justify-content-center mt-3">
+                        <button type="submit" class="sub_btn p-1 px-3 border-0 rounded-3 w-50">Submit</button>
+                    </div> -->
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

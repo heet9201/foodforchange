@@ -1,0 +1,30 @@
+{% extends 'ngo_pages/ngo_navbar.html' %} {% load static %}
+{%block npstatus%}<hr class="w-100 m-0" style="height: 4px; opacity: 1; background-color: #f38e5a" /> {%endblock npstatus%}
+{%block nprofileactive%}active{%endblock nprofileactive%}
+<!-- <div class="bkg1 position-relative d-block overflow-lg-hidden"> -->
+{% block content %}
+<div class="bkg1 d-flex justify-content-center align-items-center ngo_home_padding">
+  <div class="ngo_bkg">
+    
+    {% comment %} {% for profiles in profile %} {% endcomment %} {% comment %} 
+    {% if profiles.email == user.username %} {% endcomment %}
+    <div class="text-center w-100 my-5">
+      <h5 class="text-white w-100 ngo_name">{{ profile.ngo_name }}</h5>
+    </div>
+    <div class="text-white mx-4 w-100 ps-4 ngo_detail pt-3 mt-5">
+      <h6 class="fw-normal ngo_detail">Coordinator: {{ profile.owner_name }}</h6>
+      <h6 class="fw-normal ngo_detail">HQ Location: {{ profile.area_head }}</h6>
+      <h6 class="fw-normal ngo_detail">Email: {{ profile.Email }}</h6>
+      <h6 class="fw-normal ngo_detail">Contact: {{ profile.Contact_no }}</h6>
+      <h6 class="fw-normal ngo_detail">Areas Served: {{profile.areas}} </h6>
+    </div>
+    <!-- <div class="w-100 d-flex justify-content-center mt-4">
+      <button class="edit_prof_btn">Edit Profile</button>
+    </div> -->
+    
+    
+  </div>
+    </div>
+</div>
+{% endblock %}
+<!-- </div> -->

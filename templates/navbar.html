@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/stylem.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" />
+    <!-- <link rel="stylesheet" href="{% static 'css/profile.css' %}" /> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/style1.css' %}" /> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/style2.css' %}" /> -->
+    <!-- for the calender -->
+    <link href="https://fonts.googleapis.com/css?family=Coda|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- ends -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/74bfeb452a.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <title>Food For Change {% block temp %} {% endblock %}</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-light bg-gradient position-absolute w-100 z-4 pt-0 " style="z-index: 1;">
+        <div class="container-fluid z-4 text-dark py-2">
+            <a class="navbar-brand text-dark" href="{% url 'index' %}">FoodForChange</a>
+            <button class="navbar-toggler mt-2 text-success" style="border-color: white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {%block homeactive%}{%endblock homeactive%} text-dark" aria-current="page" href="{% url 'index' %}">Home</a> {%block hstatus%} {%endblock hstatus%}
+
+
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link {%block leaderactive%}{%endblock leaderactive%}" href="{% url 'leaderboard'%}">Leaderboard</a> {%block lstatus%} {%endblock lstatus%}
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link {%block feedactive%}{%endblock feedactive%}" href="{% url 'feed' %}">Feed</a> {%block fstatus%} {%endblock fstatus%}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {%block profileactive%}{%endblock profileactive%}" href="{% url 'profile' %}">Profile</a> {%block pstatus%} {%endblock pstatus%}
+                    </li>
+                </ul>
+                <ul class="list-group" style="list-style-type: none">
+                    {% if user.is_authenticated %}
+
+                    <button class="d-flex profile hambug_00 w-auto p-3 border-0" style="background-color: rgb(117, 164, 136)" type="submit ">
+                <i class="fa-regular fa-user me-2"></i>
+                <a href="login" class="text-decoration-none">
+                  {% comment %} {% for profiles in profile %} {% endcomment %}
+                  <li>
+                      {% comment %} {% if profiles.email == user.username %} {% endcomment %}
+                      Welcome,
+                    {{profile.First_name}}   &nbsp; || &nbsp;
+                      {% comment %} {% endif %} {% endcomment %} 
+                  </li>
+                  {% comment %} {% endfor %} {% endcomment %}
+                    <a href="logout" class="text-decoration-none">Logout</a>
+                  </li> </a
+                >{% else %}
+              </button>
+                    <ul>
+                        <button class="d-flex profile hambug_00 w-auto" style="background-color: rgb(117, 164, 136)" type="submit ">
+                  <i class="fa-regular fa-user me-2"></i
+                  ><a
+                    style="text-decoration: none"
+                    href="{% url 'loginpage' %} "
+                    >Login / Signup</a
+                  >{% endif %}
+                </button>
+                    </ul>
+                </ul>
+
+                <!-- <button class="d-flex profile " style="background-color: #ADFF45E5; " type="submit ">
+                        <i class="fa-regular fa-user me-2 "></i><a style="text-decoration: none; " href="{% url 'loginpage' %} ">My Profile</a>
+                    </button> -->
+            </div>
+        </div>
+    </nav>
+    {% block content %} {% endblock content %}
+
+    <footer class="ftr">
+        <h5 class="text-center text-black my-3 feed_txt ftr">
+            Be the part of the community and find your
+            <span style="color: #75a488">place</span>
+            <div class="d-flex d-md-none"><br></div>
+            <span class=" end-0">&copy; Hunger Management 2022</span>
+        </h5>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+</body>
+
+</html>

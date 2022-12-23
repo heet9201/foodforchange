@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style_ngo.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" />
+    <script src="https://kit.fontawesome.com/74bfeb452a.js" crossorigin="anonymous"></script>
+
+    <title>Food For Change</title>
+</head>
+
+<body>
+    <!-- <div class="bkg1 position-relative d-block overflow-lg-hidden"> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light position-absolute w-100 z-3">
+        <div class="container-fluid z-2">
+            <a class="navbar-brand" href="{%url 'ngo_index' %}">FoodForChange</a>
+
+            <button class="navbar-toggler z-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse z-1" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {%block nprofileactive%}{%endblock nprofileactive%}" aria-current="page" href="{%url 'ngo_index' %}">Profile</a> {%block npstatus%} {%endblock npstatus%}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {%block nvneedactive%}{%endblock nvneedactive%}" href="{%url 'vneeded' %}">Volunteer Needed</a> {%block nnstatus%} {%endblock nnstatus%}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {%block npartactive%}{%endblock npartactive%}" href="{%url 'vparticipated' %}">Volunteers Participated</a> {%block nvstatus%} {%endblock nvstatus%}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- </div> -->
+
+    {% block content %} {% endblock content %}
+
+    <footer class="ftr">
+        <h5 class="text-center text-black my-3 feed_txt ftr">
+            Be the part of the community and find your
+            <span style="color: #75a488">place</span>
+            <div class="d-flex d-md-none"><br></div>
+            <span class=" end-0">&copy; Hunger Management 2022</span>
+        </h5>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

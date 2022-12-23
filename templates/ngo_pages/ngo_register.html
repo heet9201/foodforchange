@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" />
+    <link rel="stylesheet" href="{% static 'css/style_ngo.css' %}">
+    <title>Food For Change</title>
+</head>
+<body class="reg_container">
+    <div class="reg_main">
+        
+            <div class="reg_heading">
+                <h1>WELCOME</h1>
+            </div>
+            <form method="POST" action="ngo_register_check" name="form" onsubmit="return validateForm()">
+                {% csrf_token %}
+        <div class="d-block d-md-flex w-100 justify-content-center">
+            <div class="reg_inputs3">
+                <div class="d-block d-flex-md" id="reg_inputs4">
+                    <input type="text" placeholder="Name of the NGO" name="ngo_name" id="name" required class="reg_inputs2">
+                    <input type="text" placeholder="Coordinator Name" name="o_name" id="oname" required class="reg_inputs2">
+            
+                </div>
+            
+            
+                <div class="reg_inputs3">
+                    <div class="d-block d-md-flex">
+                        <input type="text" placeholder="Contact number" name="cno" id="cno" required class="reg_inputs5">
+                        <select name="h_area" class="reg_inputs1">
+                            <option value="" class="reg_select_h">Area in which NGO's Headquaters is present</option>
+                            <option value="Thaltej" class="su_dd">Thaltej</option>
+                            <option value="Navrangpura" class="su_dd">Navrangpura</option>
+                            <option value="Satellite" class="su_dd">Satellite</option>
+                            <option value="Sindhu Bhavan" class="su_dd">Sindhu Bhavan</option>
+                            <option value="Gupta Nagar" class="su_dd">Gupta Nagar</option>
+                            <option value="Bopal" class="su_dd">Bopal</option>
+                        </select>
+                    </div>
+                </div>
+            
+            
+            
+                <div  class="d-flex justify-content-start">
+                    <div>
+                        <p class="reg_p">Areas in which your NGOs are present at this time</p>
+                        <input type="checkbox" id="Thaltej" name="checks[]" value="Thaltej" class="reg_cb">
+                        <label for="Thaltej" class="reg_cb1"> Thaltej</label><br>
+                        <input type="checkbox" id="Navrangpura" name="checks[]" value="Navrangpura" class="reg_cb">
+                        <label for="Navrangpura" class="reg_cb1"> Navrangpura</label><br>
+                        <input type="checkbox" id="Satellite" name="checks[]" value="Satellite" class="reg_cb">
+                        <label for="Satellite" class="reg_cb1"> Satellite</label><br>
+                        <input type="checkbox" id="Sindhu Bhavan" name="checks[]" value="Sindhu Bhavan" class="reg_cb">
+                        <label for="Sindhu Bhavan" class="reg_cb1"> Sindhu Bhavan</label><br>
+                        <input type="checkbox" id="Gupta Nagar" name="checks[]" value="Gupta Nagar" class="reg_cb">
+                        <label for="Gupta Nagar" class="reg_cb1"> Gupta Nagar</label><br>
+                        <input type="checkbox" id="Bopal" name="checks[]" value="Bopal" class="reg_cb">
+                        <label for="Bopal" class="reg_cb1"> Bopal</label><br>
+                    </div>
+                </div>
+                <div class="reg_inputs3">
+                    <input type="email" name="email" id="email" placeholder="Email" required class="reg_inputs6">
+                </div>
+            
+                <div class="reg_inputs3">
+                    <div class="d-block d-md-flex" id="reg_inputs4">
+                        <input type="password" placeholder="Password" name="password" id="password" class="reg_inputs2">
+            
+                        <input type="password" placeholder="Confirm Password" name="password2" id="password2"
+                            class="reg_inputs2">
+                    </div>
+                </div>
+            
+                <div class="clearfix mt-3">
+                    <button type="submit" class="reg_signupbtn">Sign Up</button>
+                </div>
+            </form>
+
+                <div class="clearfix">
+                    <p class="reg_signup">Already have an account ? <a href="{% url 'ngo_login_page' %}" class="text-decoration-none su_login"> Login </a></p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            let x = document.forms["form"]["ngo_name"].value;
+            if (x == "") {
+                alert("NGO Name must be filled out");
+                return false;
+            }
+            let m = document.forms["form"]["o_name"].value;
+            if (m == "") {
+                alert("Owner's Name must be filled out");
+                return false;
+            }
+            let p = document.forms["form"]["cno"].value;
+            if (p == "") {
+                alert("Please Enter your number");
+                return false;
+            }
+            let h1 = document.forms["form"]["h_area"].value;
+            if (h1 == "") {
+                alert("Please select Headquaters Area");
+                return false;
+            }
+            let y = document.forms["form"]["email"].value;
+            if (y == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            let z = document.forms["form"]["password"].value;
+            console.log(z);
+            if (z == "") {
+                alert("Password must be filled out");
+                return false;
+            }
+            let z1 = document.forms["form"]["password2"].value;
+            if (z1 == "") {
+                alert("re-check must be filled out");
+                return false;
+            }
+            if (z != z1) {
+                alert("Passwords should match!");
+                return false;
+            }
+        }
+    </script>
+</body>

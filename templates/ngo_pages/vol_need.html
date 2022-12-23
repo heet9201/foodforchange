@@ -1,0 +1,61 @@
+{% extends 'ngo_pages/ngo_navbar.html' %} {% load static %}
+{%block nnstatus%}<hr class="w-100 m-0" style="height: 4px; opacity: 1; background-color: #f38e5a" /> {%endblock nnstatus%}
+{%block nvneedactive%}active{%endblock nvneedactive%}
+{% block content %}
+<div class="bkg2 vn_pad w-100 pt-5 d-flex align-items-center justify-content-center">
+    <div class="d-flex justify-content-center">
+        <div class="w-100">
+            <div class="text-white mb-5 d-flex justify-content-center">
+                Enter details of place to collect/distribute food
+            </div>
+            <form action="nvsession" method="POST" class="cal">
+                {% csrf_token %}
+                <div class="justify-content-center">
+                    <input type="text" name="event_name" class="my-1 mb-3 ps-2 py-1 w-100 border-0 rounded-3 vn_p" placeholder="Event name" />
+                    
+                    <!-- <input type="date" class="form-control w-100 mb-4" name="date" placeholder="Select DateTime" /> -->
+
+                    <div class="d-flex w-100 align-items-center">
+                        <input type="date" name="sdate" class="my-1 mb-3 ps-2 mx-2 py-1 w-27 border-0 rounded-3 vn_p" placeholder="Start time" />
+                        <h6 class="text-white">To</h6>
+                        <input type="date" name="edate" class="my-1 mb-3 ps-2 py-1 ms-2 w-27 border-0 rounded-3 vn_p" placeholder="End time" />
+                    </div>
+
+                    <div class="d-flex justify-content-between w-100 mb-3">
+                        <select name="area" class="rounded-3 border-0 ps-1 w-100 py-1" class="register2">
+                    <option value=" ">Area</option>
+                    <option value="Thaltej" class="dd">Thaltej</option>
+                    <option value="Navrangpura" class="dd">Navrangpura</option>
+                    <option value="Satellite" class="dd">Satellite</option>
+                    <option value="Sindhu Bhavan" class="dd">Sindhu Bhavan</option>
+                    <option value="Gupta Nagar" class="dd">Gupta Nagar</option>
+                    <option value="Bopal" class="dd">Bopal</option>
+                  </select>
+                    </div>
+
+                    <div class="d-flex align-items-center text-white justify-content-between">
+                        <!-- <h6>Time</h6> -->
+                        <!-- <input type="time" name="" class="my-1 mb-3 ps-2 mx-2 py-1 w-25 border-0 rounded-3 vn_p" placeholder="Start time" />
+                        <h6>To</h6> -->
+
+                        <!-- <input type="time" name="" class="my-1 mb-3 ps-2 py-1 ms-2 w-25 border-0 rounded-3 vn_p" placeholder="Start time" /> -->
+                        <select name="slot" id="time " class="register2 my-1 mb-3 ps-2 py-1 w-100 border-0 rounded-3 vn_p">
+        <option value="">Time</option>
+        <option value="Lunch" class="dd">Lunch</option>
+        <option value="Dinner" class="dd">Dinner</option>
+      </select>
+                    </div>
+                    <input type="number" name="n_vol" class="my-1 ps-2 py-1 w-100 border-0 rounded-3 vn_p" placeholder="No. of volunteers needed" min="1" />
+                    <textarea name="specifications" class="my-3 border-0 rounded-3 w-100 py-1 vn_p" cols="30" rows="3" placeholder="Any specific information"></textarea>
+
+                    <div class="clearfix w-100 d-flex justify-content-center mt-3">
+                        <button type="submit" class="sub_btn p-1 px-3 border-0 rounded-3 w-50">
+                    Submit
+                  </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

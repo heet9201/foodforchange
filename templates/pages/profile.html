@@ -1,0 +1,212 @@
+{% extends 'navbar.html' %} {% load static %} {%block pstatus%}
+<hr class="w-100 m-0" style="height: 4px; opacity: 1; background-color: #f38e5a" /> {%endblock pstatus%} {%block profileactive%}active{%endblock profileactive%} {% block content %}
+<!-- <div class="bkg1 position-relative overflow-lg-hidden"> -->
+<!-- <div class="bkg1 d-lg-flex justify-content-between overflow-lg-hidden"> -->
+<div class="bkg1 d-lg-flex justify-content-between prof_padding">
+    <div class="prof_bkg">
+        <div class="prof_img_div d-flex justify-content-center align-items-center w-100">
+            {% if profile.pp_img %}
+            <img src="{{ profile.pp_img }}" alt="img" class="prof_img" /> {% else %}
+            <img src="https://play.google.com/store/apps/details?id=club.pixelbox.instasquare&hl=en_IN&gl=US" alt="img" class="prof_img" /> {% endif %}
+        </div>
+        <div class="text-center w-100 my-2">
+            {% comment %} {% for profiles in profile %} {% endcomment %} {% comment %} {% if profiles.email == user.username %} {% endcomment %}
+            <h5 class="text-white w-100">{{profile.First_name}} {{profile.Last_name}} &nbsp; &nbsp;
+            </h5>
+
+        </div>
+        <div class="text-white mx-4 w-100" id="saving">
+            <h6 class="fw-normal">Age: {{profile.Age}}</h6>
+            <!-- <h6 class="fw-normal">Gender: {{profile.Gender}}</h6> -->
+            <!-- <h6 class="fw-normal">My Location</h6> -->
+            <!-- <h6 class="fw-normal">Registered Since</h6> -->
+            <!-- <h6 class="fw-normal">Volunteering Type</h6> -->
+            <h6 class="fw-normal">Email: {{profile.Email}}</h6>
+            <h6 class="fw-normal">Contact Number: {{profile.Contact_no}}</h6>
+            <!-- <h6 class="fw-normal">Rank </h6> -->
+            <!-- <div class="w-100 d-flex justify-content-center mt-4"> -->
+            <button class="edit_prof_btn" onclick="myFunction()">Edit Profile</button>
+            <!-- </div> -->
+        </div>
+        <div class="text-white mx-4 w-100" id="editing" style="display: none;">
+            <form method="POST" action="pp_img" enctype="multipart/form-data" name="form" onsubmit="return validate()">
+                {% csrf_token %}
+                <!-- <h6 class="fw-normal">Age: {{profile.Age}}</h6> -->
+                <div class="d-flex">
+                    <h6>Age: </h6>
+                    <input type="text" name="age" id="age" value="{{profile.Age}}" class="register2" />
+                </div>
+                <!-- <div class="d-flex">
+                    <h6>Gender: </h6><select name="gender" id="gender" class="register2" style="width: 200px;">
+                          <option value="">Gender</option>
+                          <option value="Male" class="dd">Male</option>
+                          <option value="Female" class="dd">Female</option>
+                          <option value="Other" class="dd">Other</option>
+                          <option value="Not to Mention" class="dd">Not to Mention</option>
+                        </select></div> -->
+
+                <!-- <h6 class="fw-normal">Gender: {{profile.Gender}}</h6> -->
+                <div class="d-flex">
+                    <h6>My Location: </h6>
+                    <input type="text" value="{{profile.Address}}" name="address" id="address" class="register2" />
+                </div>
+                <!-- <h6 class="fw-normal">My Location</h6> -->
+                <div class="d-flex">
+                    <h6>Email: </h6><input type="email" value="{{profile.Email}}" name="email" id="email" class="register2" /></div>
+                <!-- <h6 class="fw-normal">Email: {{profile.Email}}</h6> -->
+                <div class="d-flex">
+                    <h6>Contact Number: </h6>
+                    <input type="text" value="{{profile.Contact_no}}" name="pnumber" id="pnumber" class="register2" />
+                </div>
+                <!-- <h6 class="fw-normal">Contact Number: {{profile.Contact_no}}</h6> -->
+                <input name="imgfile" type="file" id="imgfile" value="0">
+                <!-- <input type="submit"> -->
+                <!-- <div class="w-100 d-flex justify-content-center mt-4"> -->
+                <button type="submit" class="edit_prof_btn" onclick="myFunction()">Save Profile</button>
+                <!-- </div> -->
+            </form>
+        </div>
+        <!-- <div class="w-100 d-flex justify-content-center mt-4">
+            <button class="edit_prof_btn" onclick="myFunction()">Edit Profile</button>
+        </div> -->
+
+        <div class="d-flex justify-content-center w-100 mt-3">
+            <hr class="prof_line" />
+        </div>
+        <div class="text-white mx-4 w-100">
+            <h6>Recents</h6>
+        </div>
+        <div class="d-flex justify-content-evenly w-100">
+            <div class="prof_recent">
+                <h5 class="mt-lg-3 mb-2 vol_text1">{{ l_date }}</h5>
+                <span class="vol_text1">Last Time Registered</span>
+            </div>
+            <div class="prof_recent1">
+                <h5 class="mt-lg-3 mb-2 vol_text1">{{ l_place }}</h5>
+                <span class="vol_text1">Last Event Registered</span>
+            </div>
+        </div>
+    </div>
+    <div class="d-lg-block text-white" id="main">
+        <div class="w-100 prof_main1 d-block d-md-flex justify-content-evenly">
+            <div class="prof_d1 d-flex align-items-center justify-content-center">
+                {% comment %} <div class="w-100 start-0" id="my_inventory">
+                    
+                    <h3>Volunteers do not necessarily have the time; they just have the heart</h3>
+
+                </div>
+                <div class="d-flex justify-content-between w-100 h-100" id="cal_time">
+                    <div class="" id="prof_d1_1">
+                        <h6 class="vol_text">This month</h6>
+                        <h5 class="mt-lg-2 mb-1 vol_text">{{ din_n }}</h5>
+                        <h6 class="vol_text">Dinner Sessions Volunteered</h6>
+                    </div>
+                    <div class="" id="prof_d1_1">
+                        <h6 class="vol_text">This month</h6>
+                        <h5 class="mt-lg-2 mb-1 vol_text">{{ lun_n }}</h5>
+                        <h6 class="vol_text">Lunch Sessions Volunteered</h6>
+                    </div>
+                </div> {% endcomment %}
+                <h3>Volunteers do not necessarily have the time; they just have the heart</h3>
+                
+            </div>
+            <div class="prof_areas">
+                 <h3>Slot-wise Volunteering Stats</h3> 
+
+                <canvas id="myChart" style="width:130%;max-width:600px"></canvas>
+            </div>
+        </div>
+        <div class="w-100 prof_main2 d-block d-md-flex justify-content-evenly">
+            <div class="prof_m2_1">
+                <h3 class="vol_text">Events Volunteered this month</h3>
+                <div class="event_scroll">
+                    <table class="table table-bordered table-striped table-success" id="prof_table">
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Times Registered</th>
+                        
+                    </tr>
+                {% for results in area_n %}
+                    
+                <h5 class="mt-lg-2 mb-1 vol_text"> 
+                    <tr>
+                        <td>{{ results.vevent }} </td>
+                        <td>{{ results.c }}</td>
+                    </tr>
+                    
+                </h5>
+   
+                {% endfor %}
+               </table>
+            </div>
+            </div>
+            <div class="prof_m2_2 d-flex flex-wrap justify-content-center">
+                
+               <div class="d-flex d-md-block vol_text11 align-items-center">
+
+                        <h5 class="mt-lg-3 mb-0 vol_text11">{{ num_vol }}</h5>
+                        <h6 class="vol_text1">Times volunteering Registered</h6>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+// var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var xValues = ["Lunch", "Dinner"];
+var yValues = ["{{ lun_n }}","{{ din_n }}"];
+var barColors = [
+  "#c7dbd2",
+  "#00aba9",
+//   "#2b5797",
+//   "#e8c3b9",
+//   "#1e7145"
+];
+new Chart("myChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+      legend: {
+          labels:{
+              fontColor : "white",
+          }
+      }
+  }
+});
+
+
+</script>
+<script>
+    console.log("hello world")
+
+    function validate() {
+        let z = document.forms["form"]["imgfile"].value;
+        console.log("z is: ")
+        console.log(z)
+        if (z == "") {
+            alert("Image should be uploaded");
+            return false;
+        }
+    }
+
+    function myFunction() {
+        var y = document.getElementById("saving");
+        var x = document.getElementById("editing");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+        } else {
+            x.style.display = "none";
+            y.style.display = "block";
+        }
+    }
+</script>
+{% endblock %}
